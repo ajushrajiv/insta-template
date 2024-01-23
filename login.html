@@ -4,22 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+  <link rel="stylesheet" href="loginstyle.css">
 </head>
 <body>
+    
     <div class="container">
-    <h2>Login</h2>
-        <form method="post" id="myForm">
-            <label for="email"><b>email</b></label>
-            <input type="text" id="email" placeholder="Enter email" name="email" required>
-
-            <label for="password"><b>Password</b></label>
-            <input type="password" id="password" placeholder="Enter Password" name="password" required>
+        
+        <form method="post" id="myForm" >
+            <table >
+                <tr><h2>Login</h2></tr>
+                <tr>
+                    <td>
+                        <label for="email" class="email"><b>Email</b></label>
+                    </td>
+                    <td>      
+                        <input type="text" id="email" placeholder="Enter email" name="email" required>
+                    </td>
+                </tr>
                 
-            <button type="button" onclick="onClickSubmit()">Login</button>
+                <tr>
+                    <td>
+                        <label for="password" class="email"><b>Password</b></label>
+                    </td>
+                    <td>
+                        <input type="password" id="password" placeholder="Enter Password" name="password" required>
+                    </td>
+                </tr>
+            </table>
+                
+                <button type="button" onclick="onClickSubmit()">Login</button>
 
+            <p id="result"></p>
         </form>
-        <small id="result"></small>
-
     </div>
 
     <script>
