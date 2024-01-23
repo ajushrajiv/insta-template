@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Signup</h2>
+        <form method="post" id="myForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" placeholder="Enter email" name="email" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+    
+            <button type="button" onclick="signup()">signup</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+  <script>
+    function signup() {
+        let username = document.getElementById("name").value;
+        let mail = document.getElementById("email").value;
+        let pwd = document.getElementById('password').value;
+
+      var user = {
+        "name": username,
+        "email": mail,
+        "password": pwd
+      };
+
+      document.getElementById('result').innerText = JSON.stringify(user);
+    }
+  </script>
+</body>
+</html>
