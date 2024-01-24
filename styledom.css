@@ -1,0 +1,25 @@
+#imagegrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .image-container {
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  #loading {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    color: var(--secondary-color);
+    letter-spacing: 4px;
+    font-size: larger;
+  }

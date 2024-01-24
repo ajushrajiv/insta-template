@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>insta-template</title>
+    <link rel="stylesheet" href="styledom.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="logoimgstyle.css">
     <link rel="stylesheet" href="variables.css">
@@ -54,21 +55,45 @@
     </div>
 
     <!--posted images-->
-    <div class="posted-images">
         
-        <img class="single-image" src="image1.jpg" alt="rubber plant" >
-        <img class="single-image" src="image2.jpg" alt="calathea" >
-        <img class="single-image" src="image3.jpg" alt="monstera" >
-        <img class="single-image" src="image1.jpg" alt="rubber plant" >
-        <img class="single-image" src="image2.jpg" alt="calathea" >
-        <img class="single-image" src="image3.jpg" alt="monstera" >
-        <img class="single-image" src="image1.jpg" alt="rubber plant" >
-        <img class="single-image" src="image2.jpg" alt="calathea" >
-        <img class="single-image"src="image3.jpg" alt="monstera" >
-        <img class="single-image" src="image1.jpg" alt="rubber plant" >
-        <img class="single-image" src="image2.jpg" alt="calathea" >
-        <img class="single-image"src="image3.jpg" alt="monstera" >
-    </div>
+    <div id="loading">loading...</div>
+    <div id="imagegrid"></div>
+    <script>
+        let jsonData = {
+            images:[
+            'image2.jpg','image2.jpg','image2.jpg',
+            'image2.jpg','image2.jpg','image2.jpg',            
+            'image2.jpg','image2.jpg','image2.jpg'
+            ]
+        };
+
+        function simulate(callback){
+            setTimeout(callback,1000);
+        }
+
+        function loadImages(){
+            let loadingDiv = document.getElementById("loading");
+            let imggrid = document.getElementById("imagegrid");
+        
+
+        loadingDiv.style.display = 'block';
+
+        simulate(function(){
+            loadingDiv.style.display = 'none' ;
+            jsonData.images.forEach(function(img){
+                var imgcontainer = document.createElement('div');
+                imgcontainer.className = 'image-container';
+
+                var imgElement = document.createElement('img');
+                imgElement.src = img;
+
+                imgcontainer.appendChild(imgElement);
+                imggrid.appendChild(imgcontainer);
+            });
+        });
+    }
+        document.addEventListener('DOMContentLoaded', loadImages);
+    </script>
 
     <footer>
         <div class="footer">
